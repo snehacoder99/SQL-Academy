@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Basics to Intermediate</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        code {
+            background: #f4f4f4;
+            padding: 5px;
+            display: block;
+            margin: 10px 0;
+            border-left: 3px solid #ff7e5f;
+        }
+
+        .libraries {
+            background: #fff;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>SQL Basics to Intermediate</h1>
+    </header>
+    <div class="container">
+        <section>
+            <h2>Introduction to SQL</h2>
+            <p>SQL (Structured Query Language) is a standard language for accessing and manipulating databases.</p>
+            <h3>Basic SQL Commands</h3>
+            <p>Here are some basic SQL commands:</p>
+            <h4>SELECT</h4>
+            <p>The SELECT statement is used to select data from a database.</p>
+            <code>
+                SELECT column1, column2 FROM table_name;
+            </code>
+            <h4>INSERT</h4>
+            <p>The INSERT INTO statement is used to insert new records in a table.</p>
+            <code>
+                INSERT INTO table_name (column1, column2) VALUES (value1, value2);
+            </code>
+            <h4>UPDATE</h4>
+            <p>The UPDATE statement is used to modify the existing records in a table.</p>
+            <code>
+                UPDATE table_name SET column1 = value1, column2 = value2 WHERE condition;
+            </code>
+            <h4>DELETE</h4>
+            <p>The DELETE statement is used to delete existing records in a table.</p>
+            <code>
+                DELETE FROM table_name WHERE condition;
+            </code>
+        </section>
+        <section>
+            <h2>Intermediate SQL Concepts</h2>
+            <h3>JOIN</h3>
+            <p>The JOIN clause is used to combine rows from two or more tables, based on a related column between them.</p>
+            <code>
+                SELECT column1, column2 FROM table1 INNER JOIN table2 ON table1.common_column = table2.common_column;
+            </code>
+            <h3>GROUP BY</h3>
+            <p>The GROUP BY statement is used to group rows that have the same values into summary rows, like "find the number of customers in each country".</p>
+            <code>
+                SELECT COUNT(CustomerID), Country FROM Customers GROUP BY Country;
+            </code>
+            <h3>HAVING</h3>
+            <p>The HAVING clause is used to filter records that work on summarized GROUP BY results.</p>
+            <code>
+                SELECT COUNT(CustomerID), Country FROM Customers GROUP BY Country HAVING COUNT(CustomerID) > 5;
+            </code>
+        </section>
+        <section class="libraries">
+            <h2>SQL Libraries and Tools</h2>
+            <h3>MySQL</h3>
+            <p>MySQL is an open-source relational database management system.</p>
+            <code>
+                -- Connect to a MySQL database<br>
+                mysql -u username -p database_name;
+            </code>
+            <h3>PostgreSQL</h3>
+            <p>PostgreSQL is a powerful, open-source object-relational database system.</p>
+            <code>
+                -- Connect to a PostgreSQL database<br>
+                psql -U username -d database_name;
+            </code>
+            <h3>SQLite</h3>
+            <p>SQLite is a C-language library that implements a small, fast, self-contained, high-reliability, full-featured, SQL database engine.</p>
+            <code>
+                -- Open an SQLite database<br>
+                sqlite3 database_name.db;
+            </code>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2024 SQL Learning Page. All rights reserved.</p>
+    </footer>
+</body>
+</html>
